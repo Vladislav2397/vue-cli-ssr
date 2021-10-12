@@ -7,13 +7,26 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "ssr:build": "vue-cli-service ssr:build",
+    "ssr:fix": "vue-cli-service ssr:fix",
+    "ssr:fix-vuex": "vue-cli-service ssr:fix-vuex",
+    "ssr:serve": "vue-cli-service ssr:serve",
+    "ssr:start": "vue-cli-service ssr:start",
+    "ssr:static": "vue-cli-service ssr:static"
   },
   "dependencies": {
+    "@uvue/core": "^0.1.0",
+    "@uvue/server": "^0.1.0",
+    "compression": "^1.7.3",
+    "connect": "^3.6.6",
+    "cookie-parser": "^1.4.3",
     "core-js": "^3.6.5",
+    "js-cookie": "^3.0.1",
     "register-service-worker": "^1.7.1",
+    "serve-static": "^1.13.2",
     "vue": "^2.6.11",
-    "vue-class-component": "^7.2.3",
+    "vue-class-component": "^7.2.6",
     "vue-property-decorator": "^9.1.2",
     "vue-router": "^3.2.0",
     "vuex": "^3.4.0"
@@ -22,6 +35,7 @@
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
+    "@uvue/vue-cli-plugin-ssr": "~0.1.7",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-e2e-nightwatch": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
@@ -43,6 +57,7 @@
     "prettier": "^2.2.1",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
+    "vue-cli-plugin-pug": "~2.0.0",
     "vue-template-compiler": "^2.6.11"
   }
 }
