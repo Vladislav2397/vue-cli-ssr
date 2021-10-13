@@ -1,0 +1,71 @@
+.button-store {
+    display: inline-block;
+    border-radius: $borderRadiusUI;
+    text-align: center;
+    position: relative;
+    box-sizing: border-box;
+
+    &__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &--size {
+        &-l {
+            width: toRem(148);
+            height: toRem(44);
+        }
+
+        &-m {
+            width: toRem(122);
+            height: toRem(36);
+        }
+
+        &-s {
+            width: toRem(108);
+            height: toRem(32);
+        }
+
+        &-xs {
+            width: toRem(94);
+            height: toRem(28);
+        }
+
+        &-l,
+        &-m {
+            .button-store__image {
+                width: toRem(102);
+            }
+        }
+
+        &-s,
+        &-xs {
+            .button-store__image {
+                width: toRem(78);
+            }
+        }
+    }
+
+    &--type {
+        &-ios {
+            padding: toRem(3) toRem(14);
+        }
+
+        &-android {
+            padding: toRem(3) toRem(5);
+        }
+    }
+
+    &--view {
+        &-dark {
+            background-color: #000;
+        }
+
+        &-light {
+            background-color: #fff;
+            box-shadow: var(--elevationBase);
+        }
+    }
+}

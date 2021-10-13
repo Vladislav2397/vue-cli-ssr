@@ -1,0 +1,11 @@
+.card-default {
+    transition: box-shadow 0.3s ease;
+
+    @media (min-width: $desktop) {
+        &--with-hover {
+            &:hover:not(.disabled) {
+                box-shadow: var(--elevationBaseHover);
+            }
+        }
+    }
+}

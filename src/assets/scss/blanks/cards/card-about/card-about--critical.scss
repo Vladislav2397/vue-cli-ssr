@@ -1,0 +1,106 @@
+.card-about {
+    @include paddingLevel(top, pink);
+    @include paddingLevel(bottom, orange);
+
+    padding-left: toRem(16);
+    padding-right: toRem(16);
+    position: relative;
+
+    &--header {
+        .card-about {
+            &__description {
+                color: var(--textBase);
+            }
+        }
+    }
+
+    &--footer {
+        border: 1px solid var(--controlBorderBrand);
+
+        .card-about {
+            &__title {
+                @include marginLevel(bottom, red);
+            }
+
+            @media (max-width: $maxMobileLate) {
+                &__content {
+                    max-width: none;
+                }
+            }
+        }
+    }
+
+    @media (max-width: $maxMobileLate) {
+        &__content:not(&__content--wide) {
+            max-width: 83.82%;
+        }
+    }
+
+    &__title {
+        @include marginLevel(bottom, blue);
+    }
+
+    &__description {
+        @include fontSize(p3);
+
+        color: var(--textSecondary);
+
+        a {
+            color: inherit;
+        }
+    }
+
+    &__image {
+        right: 0;
+    }
+
+    @media (max-width: $maxMobileLate) {
+        &__image {
+            position: absolute;
+            bottom: 0;
+            width: toRem(110);
+
+            &--position-top {
+                @include marginLevel(bottom, purple);
+
+                position: relative;
+                width: 100%;
+            }
+        }
+    }
+
+    @media (min-width: $tabletLate) {
+        &__image {
+            position: absolute;
+            width: toRem(132);
+
+            &--align {
+                &-top {
+                    top: 0;
+                }
+
+                &-stretch {
+                    top: 0;
+                    bottom: 0;
+                }
+
+                &-bottom {
+                    bottom: 0;
+                }
+
+                &-overflow {
+                    &-right {
+                        width: toRem(140);
+                        top: 50%;
+                        transform: translateY(-50%);
+                        right: toRem(-16);
+                    }
+                }
+            }
+        }
+
+        &__content {
+            max-width: toRem(320);
+        }
+    }
+}

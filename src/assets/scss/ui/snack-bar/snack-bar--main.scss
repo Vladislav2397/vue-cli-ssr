@@ -1,0 +1,73 @@
+.snack-bar {
+    @include fontSize(p3);
+
+    padding: toRem(12) toRem(16) toRem(12) toRem(12);
+    box-sizing: border-box;
+    transition: 0.3s ease;
+    transition-property: opacity, transform;
+    border: 1px solid transparent;
+    min-width: toRem(276);
+    border-radius: toRem(8);
+
+    &--type {
+        &-base {
+            background: var(--controlBackgroundBrandSecondary);
+            border-color: var(--controlBorderBrand);
+            border-radius: $borderRadiusUI;
+        }
+
+        &-warning {
+            background: var(--controlBackgroundCritical);
+            border: 1px solid var(--controlBorderCritical);
+            color: var(--textCritical);
+        }
+    }
+
+    &.show {
+        opacity: 1;
+
+        &.snack-bar {
+            &--position {
+                &-center {
+                    transform: translate(-50%, 0);
+                }
+
+                &-left {
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+
+    &--icon {
+        padding-left: toRem(40);
+
+        &::before {
+            font-family: 'icon', sans-serif;
+            position: absolute;
+            font-size: toRem(20);
+            top: toRem(12);
+            left: toRem(12);
+            width: toRem(20);
+            height: toRem(20);
+            line-height: toRem(20);
+            text-align: center;
+            border-radius: 50%;
+        }
+
+        &-close::before {
+            content: '\ea21';
+            background-color: var(--backgroundCritical);
+            color: var(--white);
+        }
+
+        &-success::before {
+            content: '\ea11';
+            color: var(--textBrand);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        min-width: toRem(480);
+    }
+}

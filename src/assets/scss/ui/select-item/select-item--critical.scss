@@ -1,0 +1,54 @@
+.select-item {
+    @include fontSize(control-medium);
+
+    padding: toRem(8) toRem(40) toRem(8) toRem(12);
+    color: var(--textSecondary);
+    position: relative;
+    vertical-align: middle;
+
+    &.active::before {
+        content: '\ea11';
+        font-family: 'icon', sans-serif;
+        font-size: toRem(20);
+        position: absolute;
+        color: var(--textBrand);
+        top: 50%;
+        transform: translateY(-50%);
+        right: toRem(12);
+    }
+
+    &__image {
+        display: inline-block;
+        width: toRem(32);
+        height: toRem(32);
+        margin-right: toRem(6);
+        vertical-align: middle;
+        position: relative;
+
+        i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--textBrand);
+        }
+
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 50%;
+            background: var(--controlBackgroundBrandSecondary);
+            z-index: -1;
+        }
+
+        &::after {
+            opacity: 0;
+            background-color: var(--controlBackgroundBrandSecondaryTransparent);
+        }
+    }
+}

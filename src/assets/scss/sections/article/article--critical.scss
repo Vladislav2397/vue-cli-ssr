@@ -1,0 +1,150 @@
+.article {
+    @include paddingLevel(bottom, yellow);
+
+    @media (max-width: $maxMobile) {
+        @include paddingLevel(top, yellow);
+    }
+
+    &__container {
+        padding: 0;
+    }
+
+    .breadcrumb {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__inner {
+        padding: toRem(16);
+    }
+
+    &__user {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__data {
+        @include fontSize(p3);
+
+        color: var(--textSecondary);
+
+        i {
+            font-size: toRem(20);
+            vertical-align: middle;
+        }
+
+        span {
+            font-size: inherit;
+            line-height: inherit;
+            color: inherit;
+            vertical-align: middle;
+        }
+    }
+
+    &__item {
+        display: inline-block;
+        vertical-align: middle;
+
+        & + & {
+            margin-left: toRem(12);
+        }
+    }
+
+    &__header {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__title {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__image {
+        @include marginLevel(bottom, pink);
+
+        position: relative;
+        height: 0;
+        padding-bottom: 66.51%;
+        overflow: hidden;
+        border-radius: $borderRadiusUI;
+
+        img {
+            position: absolute;
+            min-width: 100%;
+            height: auto;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__content {
+        @include marginLevel(bottom, pink);
+
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__blur {
+        @include paddingLevel(top, pink);
+
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            height: toRem(120);
+            background: var(--backgroundBaseGradient);
+        }
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__footer {
+        @include paddingLevel(top, pink);
+
+        border-top: 1px solid var(--controlBorderBase);
+    }
+
+    &__comments {
+        @include marginLevel(top, yellow);
+
+        position: relative;
+    }
+
+    &__list {
+        overflow: hidden;
+    }
+
+    &__count {
+        @include fontSize(p2);
+        @include marginLevel(bottom, pink);
+
+        font-weight: 500;
+    }
+
+    &__banner {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            height: toRem(120);
+            background: var(--backgroundBaseGradient);
+            z-index: 1;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        @include paddingLevel(bottom, yellow);
+    }
+}

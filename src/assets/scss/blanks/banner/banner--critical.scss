@@ -1,0 +1,47 @@
+.banner {
+    max-width: toRem(320);
+
+    &--size {
+        &-m {
+            .banner {
+                &__button {
+                    & + .banner__button {
+                        margin-left: toRem(12);
+                    }
+                }
+            }
+        }
+
+        &-s {
+            .banner {
+                &__button {
+                    & + .banner__button {
+                        margin-left: toRem(8);
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        @include marginLevel(bottom, green);
+
+        font-weight: 500;
+        color: var(--textBase);
+    }
+
+    &__description {
+        @include marginLevel(bottom, purple);
+        @include fontSize(p3);
+
+        color: var(--textSecondary);
+    }
+
+    &__button {
+        vertical-align: middle;
+
+        &--wide {
+            width: 100%;
+        }
+    }
+}

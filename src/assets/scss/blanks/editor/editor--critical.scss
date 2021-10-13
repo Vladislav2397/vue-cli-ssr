@@ -1,0 +1,7 @@
+.editor {
+    & > &__body {
+        div[data-placeholder]::before {
+            color: var(--textPlaceholder);
+        }
+    }
+}

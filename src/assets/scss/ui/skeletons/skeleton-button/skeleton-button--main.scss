@@ -1,0 +1,33 @@
+.button--skeleton {
+    width: 100%;
+    height: toRem(36);//TODO убрать после рефакторинга size button
+    pointer-events: none;
+    overflow: hidden;
+    position: relative;
+
+    .button__blick {
+        height: toRem(23*12);
+        width: toRem(80);
+        animation: blinkButton 2s ease infinite;
+        position: absolute;
+        top: toRem(-108);
+        left: toRem(-80);
+        /* stylelint-disable */
+        background: rgb(255, 255, 255);
+        background: -moz-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
+        background: -webkit-linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 40%, rgba(255, 255, 255, 0.5) 60%, rgba(255, 255, 255, 0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#ffffff', GradientType=1);
+        /* stylelint-enable */
+    }
+}
+
+@keyframes blinkButton {
+    0% {
+        transform: translateX(toRem(-7*12)) rotate(60deg);
+    }
+
+    100% {
+        transform: translateX(toRem(720)) rotate(60deg);
+    }
+}

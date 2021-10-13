@@ -1,0 +1,22 @@
+.counter {
+    @include fontSize(p4);
+
+    text-align: center;
+    font-weight: 500;
+    border-radius: 50%;
+    line-height: toRem(19);
+    height: toRem(18);
+    width: toRem(18);
+
+    &--view {
+        &-primary {
+            background-color: var(--controlBackgroundBrand);
+            color: var(--textOnBrand);
+        }
+
+        &-secondary {
+            background: var(--controlBackgroundBrandSecondary);
+            color: var(--textBrand);
+        }
+    }
+}

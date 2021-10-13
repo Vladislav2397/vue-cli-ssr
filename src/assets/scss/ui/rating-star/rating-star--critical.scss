@@ -1,0 +1,37 @@
+.rating-star {
+    @include fontSize(p3);
+
+    color: var(--textBrand);
+
+    &__text,
+    &__count,
+    &__icon {
+        display: inline-block;
+        vertical-align: middle;
+        box-sizing: border-box;
+    }
+
+    &.disabled {
+        color: var(--textSecondary);
+    }
+
+    &__text {
+        padding-right: toRem(8);
+    }
+
+    &__count {
+        @include fontSize(p3, mono medium);
+
+        padding-right: toRem(4);
+    }
+
+    &__icon {
+        width: toRem(16);
+        height: toRem(16);
+        position: relative;
+
+        & + & {
+            margin-left: toRem(4);
+        }
+    }
+}

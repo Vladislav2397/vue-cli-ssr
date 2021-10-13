@@ -1,0 +1,27 @@
+.notify {
+    padding: toRem(12) toRem(13);
+    max-width: toRem(480);
+    min-width: toRem(288);
+    position: absolute;
+    top: toRem(16);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: $z-index-header + 2;
+    border-radius: $borderRadiusUI;
+    width: 100%;
+    box-sizing: border-box;
+
+    &--type {
+        &-base {
+            background: var(--controlBackgroundBrandSecondary);
+            border: 1px solid var(--controlBorderBrand);
+            color: var(--textBase);
+        }
+
+        &-warning {
+            background: var(--controlBackgroundCritical);
+            border: 1px solid var(--controlBorderCritical);
+            color: var(--textCritical);
+        }
+    }
+}

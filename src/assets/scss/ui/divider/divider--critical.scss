@@ -1,0 +1,36 @@
+.divider {
+    border-radius: 1px;
+    background-color: var(--controlBorderBase);
+
+    &--horizontal {
+        width: 100%;
+
+        &.divider {
+            &--size {
+                &-s {
+                    height: 1px;
+                }
+
+                &-m {
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    &--vertical {
+        height: 100%;
+
+        &.divider {
+            &--size {
+                &-s {
+                    width: 1px;
+                }
+
+                &-m {
+                    width: 2px;
+                }
+            }
+        }
+    }
+}

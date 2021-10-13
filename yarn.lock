@@ -2787,6 +2787,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bemto.pug@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/bemto.pug/-/bemto.pug-2.1.0.tgz#1dbb22f588085b71861258cc4cd696c4b56b53f3"
+  integrity sha1-Hbsi9YgIW3GGEljMTNaWxLVrU/M=
+
 bfj@^6.1.1:
   version "6.1.2"
   resolved "https://registry.yarnpkg.com/bfj/-/bfj-6.1.2.tgz#325c861a822bcb358a41c78a33b8e6e2086dde7f"
@@ -11739,6 +11744,11 @@ supports-color@^7.1.0:
   integrity sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==
   dependencies:
     has-flag "^4.0.0"
+
+susy@^3.0.7:
+  version "3.0.7"
+  resolved "https://registry.yarnpkg.com/susy/-/susy-3.0.7.tgz#134f6fd1491476812942b608b991262e763f9166"
+  integrity sha512-pY2Kw9nev63xJ0LsU7Dz2s+bHcUFBgYx/DThheuRYhSYSsZSpR9YBNlREzGCDxSJR4BRRzvgeD8iPkEoCu4ZgQ==
 
 svg-tags@^1.0.0:
   version "1.0.0"

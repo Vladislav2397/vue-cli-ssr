@@ -1,0 +1,38 @@
+.settings-card {
+    padding: toRem(16) toRem(16) toRem(24);
+    position: relative;
+
+    &--action-only {
+        padding: toRem(24) toRem(16);
+    }
+
+    &__title {
+        @include paddingLevel(bottom, pink);
+
+        display: block;
+        border-bottom: 1px solid var(--controlBorderBase);
+
+        &--with-actions {
+            line-height: toRem(36);
+            height: toRem(36);
+        }
+    }
+
+    &__actions {
+        position: absolute;
+        top: toRem(16);
+        right: toRem(16);
+    }
+
+    @media (min-width: $tablet) {
+        padding: toRem(16) toRem(24) toRem(24);
+
+        &--action-only {
+            padding: toRem(24);
+        }
+
+        &__actions {
+            right: toRem(24);
+        }
+    }
+}

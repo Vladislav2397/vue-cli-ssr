@@ -1,0 +1,86 @@
+.settings {
+    &__container {
+        @include paddingLevel(bottom, yellow);
+    }
+
+    &__section {
+        & + & {
+            @include marginLevel(top, pink);
+        }
+
+        &--no-bottom-padding {
+            @include paddingLevel(bottom, green);
+        }
+    }
+
+    &__breadcrumb {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__title {
+        @include paddingLevel(bottom, pink);
+
+        border-bottom: 1px solid var(--controlBorderBase);
+        display: block;
+    }
+
+    &__user {
+        @include marginLevel(top, orange);
+        @include marginLevel(bottom, pink);
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__line {
+        & + & {
+            @include marginLevel(top, pink);
+        }
+
+        p,
+        span {
+            @include fontSize(p4);
+        }
+
+        span {
+            @include marginLevel(bottom, black);
+
+            color: var(--textSecondary);
+        }
+
+        p {
+            color: var(--textBase);
+        }
+    }
+
+    &__input {
+        & + & {
+            @include marginLevel(top, pink);
+        }
+    }
+
+    &__notification {
+        @include paddingLevel(both, purple);
+
+        & + & {
+            border-top: 1px solid var(--controlBorderBase);
+        }
+    }
+
+    &__icon {
+        display: block;
+        color: var(--textSecondary);
+        margin-left: auto;
+    }
+
+    @media (max-width: $maxMobile) {
+        @include paddingLevel(top, yellow);
+    }
+
+    @media (min-width: $tablet) {
+        &__button {
+            //
+        }
+    }
+}

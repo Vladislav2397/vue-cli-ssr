@@ -1,0 +1,45 @@
+.reviews-popup {
+    &__content {
+        background-color: var(--backgroundBase);
+        position: relative;
+        transition: 0.3s ease;
+        transition-property: opacity, height;
+    }
+
+    &__navigation {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+
+        &--prev {
+            right: 100%;
+            margin-right: toRem(6);
+        }
+
+        &--next {
+            left: 100%;
+            margin-left: toRem(6);
+        }
+    }
+
+    &.hide {
+        .reviews-popup {
+            &__content {
+                opacity: 0;
+            }
+        }
+    }
+
+    &.process {
+        .popup__body {
+            overflow-y: hidden;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__content {
+            border-bottom-left-radius: toRem(12);
+            border-bottom-right-radius: toRem(12);
+        }
+    }
+}

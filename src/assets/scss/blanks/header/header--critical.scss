@@ -1,0 +1,130 @@
+.header {
+    @include paddingLevel(both, blue);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: $z-index-header;
+    box-sizing: border-box;
+    box-shadow: var(--elevationBase);
+    background-color: var(--backgroundBase);
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        border-radius: 1px;
+        background-color: var(--controlBorderBase);
+    }
+
+    &__overlay {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: var(--backgroundOverlay);
+        z-index: 3;
+    }
+
+    &__container {
+        padding-left: toRem(8);
+        padding-right: toRem(16);
+    }
+
+    &__left,
+    &__right,
+    &__logo,
+    &__hamburger,
+    &__notify,
+    &__avatar,
+    &__user {
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__hamburger + &__logo {
+        margin-left: toRem(8);
+    }
+
+    &__logo {
+        width: toRem(142);
+        height: toRem(32);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__left {
+        width: 65%;
+    }
+
+    &__right {
+        width: 35%;
+        text-align: right;
+    }
+
+    &__avatar {
+        margin-left: toRem(12);
+    }
+
+    @media (max-width: $maxMobile) {
+        &__notification {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: $z-index-sidebar;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__container {
+            padding-left: toRem(32);
+            padding-right: toRem(32);
+            position: relative;
+        }
+
+        &__notification {
+            position: absolute;
+            top: 100%;
+            right: toRem(64);
+            width: toRem(320);
+            z-index: 1;
+            transform: translateY(toRem(16));
+        }
+
+        &__left {
+            width: 50%;
+        }
+
+        &__right {
+            width: 50%;
+        }
+    }
+
+    @media (min-width: $tabletLate) {
+        z-index: 6;
+    }
+
+    @media (min-width: $desktop) {
+        &__container {
+            padding-left: toRem(24);
+            padding-right: toRem(24);
+        }
+
+        &__notification {
+            right: toRem(57);
+        }
+
+        &__right {
+            right: toRem(24);
+        }
+    }
+}

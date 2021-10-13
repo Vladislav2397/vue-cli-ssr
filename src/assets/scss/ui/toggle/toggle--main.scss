@@ -1,0 +1,21 @@
+.toggle {
+    transition: background-color 0.3s ease;
+
+    &__control {
+        transition: margin 0.3s ease;
+    }
+
+    @media (min-width: $desktop) {
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--controlBorderBaseHover);
+        }
+
+        &.active {
+            &:hover {
+                background-color: var(--controlBackgroundBrandHover);
+            }
+        }
+    }
+}

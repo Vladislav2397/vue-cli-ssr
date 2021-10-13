@@ -1,0 +1,19 @@
+.avatar-circle--skeleton {
+    overflow: hidden;
+    pointer-events: none;
+    position: relative;
+    margin-right: toRem(8);
+    animation: image-pulse 3s ease infinite;
+    border: none;
+
+    &--view {
+        &-base {
+            background: var(--backgroundSecondary);
+            border: 1px solid var(--controlBorderBase);
+        }
+
+        &-brand {
+            background: var(--controlBackgroundBrandSecondary);
+        }
+    }
+}

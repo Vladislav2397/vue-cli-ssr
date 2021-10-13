@@ -1,0 +1,15 @@
+@keyframes blinkStars {
+    0% {
+        transform: translateX(toRem(-7*12)) rotate(60deg);
+    }
+
+    100% {
+        transform: translateX(toRem(9*12)) rotate(60deg);
+    }
+}
+
+.skeleton-stars {
+    rect {
+        animation: blinkStars 2s ease infinite;
+    }
+}

@@ -1,0 +1,48 @@
+.user-actions {
+    z-index: 3;
+    color: var(--textSecondary);
+    position: relative;
+    height: toRem(32);
+
+    &::before {
+        content: '';
+        display: inline-block;
+        width: 0;
+        height: 100%;
+        vertical-align: middle;
+    }
+
+    &__comment {
+        display: inline-block;
+        vertical-align: middle;
+
+        @media (max-width: $maxMobile) {
+            margin-left: toRem(-12);
+        }
+    }
+
+    &__count {
+        @include fontSize(p2);
+
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    &__share {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: toRem(4);
+    }
+
+    &__counter {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+
+    @media (min-width: $tablet) {
+        &__share {
+            margin-left: toRem(20);
+        }
+    }
+}

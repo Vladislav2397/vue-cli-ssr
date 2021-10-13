@@ -1,0 +1,7 @@
+@import 'assets/scss/utility/animations';
+
+.skeleton-text {
+    &__inner {
+        animation: skeleton-pulse 3s ease infinite;
+    }
+}

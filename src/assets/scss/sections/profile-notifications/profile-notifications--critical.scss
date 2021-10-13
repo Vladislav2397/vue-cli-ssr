@@ -1,0 +1,68 @@
+.profile-notifications {
+    @include paddingLevel(top, yellow);
+    @include paddingLevel(bottom, yellow);
+
+    &__card {
+        @include paddingLevel(top, pink);
+        @include paddingLevel(bottom, pink);
+    }
+
+    &__header {
+        @include marginLevel(bottom, pink);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__title {
+        font-weight: 500;
+        display: block;
+        vertical-align: middle;
+
+        @include marginLevel(bottom, blue);
+    }
+
+    &__link {
+        //
+    }
+
+    &__divider {
+        @include marginLevel(top, pink);
+    }
+
+    &__content {
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__item {
+        & + & {
+            @include marginLevel(top, blue);
+        }
+    }
+
+    &__button {
+        @include fontSize(p4);
+        @include marginLevel(top, pink);
+
+        width: 100%;
+    }
+
+    @media (min-width: $tablet) {
+        &__header {
+            position: relative;
+        }
+
+        &__title {
+            display: inline-block;
+            width: 50%;
+            margin-bottom: 0;
+        }
+
+        &__link {
+            position: absolute;
+            top: toRem(2);
+            right: toRem(16);
+        }
+    }
+}

@@ -1,0 +1,17 @@
+//fonts
+$mainFontFamily: 'roboto';
+$icon: 'icon', sans-serif;
+$fontFamily: $mainFontFamily, -apple-system, blinkmacsystemfont, 'Helvetica', 'Arial', sans-serif;
+
+$tags: (
+    h1                  : ( toRem(28), toRem(34) ),
+    h2                  : ( toRem(22), toRem(28) ),
+    h3                  : ( toRem(20), toRem(24) ),
+    p2                  : ( toRem(16), toRem(20) ),
+    p3                  : ( toRem(14), toRem(18) ),
+    p4                  : ( toRem(12), toRem(16) ),
+    p5                  : ( toRem(10), toRem(12) ),
+    control-large       : ( toRem(16), toRem(20) ),
+    control-medium      : ( toRem(14), toRem(20) ),
+    control-small       : ( toRem(12), toRem(16) ),
+);

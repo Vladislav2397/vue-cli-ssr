@@ -1,0 +1,95 @@
+.select {
+    position: relative;
+
+    &.active {
+        .select__input::before {
+            transform: translateY(-50%) rotateZ(180deg);
+        }
+    }
+
+    &__label {
+        @include fontSize(p4);
+        @include marginLevel(bottom, blue);
+
+        color: var(--textSecondary);
+    }
+
+    &__input {
+        @include fontSize(control-large);
+
+        border: 1px solid var(--controlBorderBase);
+        border-radius: $borderRadiusUI;
+        width: 100%;
+        background: var(--controlBackgroundBase);
+        box-sizing: border-box;
+        color: var(--textPlaceholder);
+        text-overflow: ellipsis;
+        position: relative;
+        overflow: visible;
+        cursor: pointer;
+        padding: 0 toRem(40) 0 toRem(12);
+        min-height: toRem(40);
+
+        &::before {
+            content: '\ea12';
+            font-family: 'icon', sans-serif;
+            font-size: toRem(20);
+            color: var(--textSecondary);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: toRem(12);
+        }
+
+        &--size {
+            &-l {
+                @include fontSize(control-large);
+
+                height: toRem(44);
+                line-height: toRem(44);
+            }
+
+            &-m {
+                @include fontSize(control-medium);
+
+                height: toRem(40);
+                line-height: toRem(40);
+            }
+        }
+    }
+
+    &__placeholder {
+        font-size: inherit;
+        line-height: inherit;
+        position: absolute;
+        top: 50%;
+        left: toRem(16);
+        transform: translateY(-50%);
+    }
+
+    &__list {
+        position: absolute;
+        left: 0;
+        z-index: 4;
+        width: 100%;
+        max-height: toRem(238);
+        min-width: toRem(189);
+        line-height: toRem(36);
+        background-color: var(--controlBackgroundBase);
+        box-shadow: var(--elevationBase);
+        border-radius: $borderRadiusUI;
+        border: 1px solid var(--controlBorderBase);
+        overflow-x: hidden;
+        overflow-y: scroll;
+
+        &--position {
+            &-top {
+                bottom: calc(100% + 0.5rem);
+            }
+
+            &-bottom {
+                top: calc(100% + 0.5rem);
+            }
+        }
+    }
+}

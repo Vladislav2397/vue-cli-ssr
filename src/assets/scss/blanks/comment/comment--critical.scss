@@ -1,0 +1,57 @@
+.comment {
+    position: relative;
+
+    &__divider {
+        position: absolute;
+        left: toRem(15);
+        bottom: 0;
+        width: 1px;
+
+        &--base {
+            top: toRem(36);
+        }
+
+        &--reply {
+            top: toRem(32);
+        }
+    }
+
+    &__user {
+        height: toRem(32);
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__content {
+        padding-left: toRem(40);
+    }
+
+    &__text {
+        @include fontSize(p3);
+
+        color: var(--textBase);
+    }
+
+    &__footer {
+        padding-top: toRem(4);
+    }
+
+    &__date {
+        @include fontSize(p4);
+
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        display: inline-block;
+        width: 50%;
+        color: var(--textSecondary);
+    }
+
+    &__counter {
+        display: inline-block;
+        width: 50%;
+        text-align: right;
+    }
+
+    @media (min-width: $tablet) {
+        //max-width: toRem(461);
+    }
+}

@@ -1,0 +1,136 @@
+.icon {
+    position: relative;
+    width: toRem(20);
+    height: toRem(20);
+    display: inline-block;
+
+    &::before {
+        font-family: 'icon', sans-serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: toRem(16);
+    }
+
+    &--size {
+        &-s {
+            width: toRem(16);
+            height: toRem(16);
+        }
+
+        &-m {
+            width: toRem(20);
+            height: toRem(20);
+        }
+    }
+
+    &--pause::before {
+        content: '\ea01';
+    }
+
+    &--negative::before {
+        content: '\ea02';
+    }
+
+    &--comment::before {
+        content: '\ea03';
+    }
+
+    &--share::before {
+        content: '\ea04';
+    }
+
+    &--positive::before {
+        content: '\ea05';
+    }
+
+    &--eagle::before {
+        content: '\ea06';
+    }
+
+    &--chevron-left::before {
+        content: '\ea07';
+    }
+
+    &--create-post::before {
+        content: '\ea08';
+    }
+
+    &--lock::before {
+        content: '\ea09';
+    }
+
+    &--hidden::before {
+        content: '\ea10';
+    }
+
+    &--hamburger::before {
+        content: '\ea13';
+    }
+
+    &--notify::before {
+        content: '\ea14';
+    }
+
+    &--user::before {
+        content: '\ea15';
+    }
+
+    &--graph::before {
+        content: '\ea16';
+    }
+
+    &--rubles::before {
+        content: '\ea17';
+    }
+
+    &--experience::before {
+        content: '\ea18';
+    }
+
+    &--cart::before {
+        content: '\ea19';
+    }
+
+    &--services::before {
+        content: '\ea20';
+    }
+
+    &--close::before {
+        content: '\ea21';
+    }
+
+    &--question::before {
+        content: '\ea22';
+    }
+
+    &--settings::before {
+        content: '\ea23';
+    }
+
+    &--calendar::before {
+        content: '\ea24';
+    }
+
+    &--news::before {
+        content: '\ea0a';
+    }
+
+    &--users::before {
+        content: '\ea0b';
+    }
+
+    &--visible::before {
+        content: '\ea0c';
+    }
+
+    &--star::before {
+        content: '\ea0d';
+        transform: translate(-50%, -55%);
+    }
+
+    &--chevron-right::before {
+        content: '\ea0f';
+    }
+}

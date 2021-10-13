@@ -1,0 +1,31 @@
+.toggle {
+    border-radius: toRem(16);
+    overflow: hidden;
+    background-color: var(--controlBorderBase);
+    width: toRem(40);
+    height: toRem(24);
+    padding: toRem(2);
+    box-sizing: border-box;
+
+    &.active {
+        background-color: var(--controlBackgroundBrand);
+
+        .toggle {
+            &__control {
+                margin-left: toRem(16);
+            }
+        }
+    }
+
+    &--disabled {
+        opacity: 0.4;
+    }
+
+    &__control {
+        width: toRem(20);
+        height: toRem(20);
+        border-radius: 50%;
+        background-color: var(--white);
+        margin-left: 0;
+    }
+}

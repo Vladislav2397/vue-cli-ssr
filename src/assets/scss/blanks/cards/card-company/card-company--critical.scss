@@ -1,0 +1,92 @@
+.card-company {
+    @include paddingLevel(top, purple);
+    @include fontSize(p4);
+
+    color: var(--textSecondary);
+    position: relative;
+
+    &__position,
+    & > &__user {
+        display: table-cell;
+    }
+
+    &__position {
+        min-width: toRem(14);
+        line-height: toRem(32);
+        padding-right: toRem(6);
+        vertical-align: top;
+        font-weight: 500;
+        font-feature-settings: 'tnum' on, 'lnum' on;
+        text-align: right;
+    }
+
+    &__user {
+        @include marginLevel(bottom, blue);
+
+        width: 100%;
+    }
+
+    &__divider {
+        @include paddingLevel(top, purple);
+    }
+
+    @media (max-width: $maxMobile) {
+        &__rating {
+            padding-left: toRem(58);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__rating {
+            display: table-cell;
+            vertical-align: top;
+            white-space: nowrap;
+        }
+
+        &__informations {
+            @include marginLevel(top, blue);
+            @include fontSize(p4);
+
+            padding-left: toRem(60);
+            color: var(--textSecondary);
+        }
+
+        &__information {
+            display: inline-block;
+            vertical-align: middle;
+
+            & + & {
+                margin-left: toRem(12);
+            }
+
+            &::before {
+                font-family: $icon;
+                font-size: toRem(16);
+                margin-right: toRem(4);
+                vertical-align: middle;
+            }
+
+            &--news {
+                &::before {
+                    content: '\ea0a';
+                }
+            }
+
+            &--views {
+                &::before {
+                    content: '\ea0c';
+                }
+            }
+
+            &--subscribers {
+                &::before {
+                    content: '\ea0b';
+                }
+            }
+        }
+
+        &__divider {
+            padding-left: toRem(58);
+        }
+    }
+}

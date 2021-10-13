@@ -1,0 +1,35 @@
+// FIXME: Убрать все font-weight с заголовков
+
+.title {
+    display: inline-block;
+
+    &--size {
+        &-h1 {
+            @include fontSize(h1, medium);
+        }
+
+        &-h2 {
+            @include fontSize(h2, medium);
+        }
+
+        &-h3 {
+            @include fontSize(h3, medium);
+        }
+
+        &-p2 {
+            @include fontSize(p2, medium);
+        }
+
+        &-p3 {
+            @include fontSize(p3, medium);
+        }
+
+        &-p4 {
+            @include fontSize(p4, medium);
+        }
+    }
+
+    &--primary {
+        color: var(--textBase);
+    }
+}

@@ -1,0 +1,21 @@
+@media (min-width: $desktop) {
+    .avatar-circle:not(.no-hover) {
+        transition: 0.3s ease;
+        transition-property: border-color, box-shadow;
+
+        &:hover {
+            border-color: var(--controlBorderBaseHover);
+            box-shadow: var(--elevationBaseHover);
+
+            .avatar-circle {
+                img {
+                    transform: translate(-50%, -50%) scale(1.1);
+                }
+            }
+        }
+
+        img {
+            transition: transform 0.3s ease;
+        }
+    }
+}

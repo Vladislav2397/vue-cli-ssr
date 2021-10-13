@@ -1,0 +1,33 @@
+.card-user {
+    @media (min-width: $desktop) {
+        &__name {
+            transition: color 0.3s ease;
+        }
+
+        &__title {
+            transition: color 0.3s ease;
+        }
+
+        &--type {
+            &-default {
+                &:hover {
+                    .card-user {
+                        &__name {
+                            color: var(--textBrand);
+                        }
+                    }
+                }
+            }
+
+            &-extended {
+                &:hover {
+                    .card-user {
+                        &__title {
+                            color: var(--textBrand);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

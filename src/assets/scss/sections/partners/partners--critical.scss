@@ -1,0 +1,42 @@
+.partners {
+    @media (max-width: $maxMobile) {
+        @include paddingLevel(top, yellow);
+    }
+
+    &__information {
+        @include marginLevel(bottom, pink);
+
+        padding: toRem(16);
+
+        h2 {
+            @include marginLevel(bottom, blue);
+        }
+
+        p {
+            @include marginLevel(bottom, pink);
+            @include fontSize(p3);
+
+            color: var(--textSecondary);
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+
+    &__form {
+        padding: toRem(16);
+    }
+
+    &__title {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__input {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,36 @@
+.article-bottom-banner {
+    &__close {
+        @include marginLevel(bottom, blue);
+
+        display: table;
+        width: 100%;
+    }
+
+    &__divider,
+    &__icon {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__divider {
+        &--left {
+            padding-right: toRem(8);
+        }
+
+        &--right {
+            padding-left: toRem(8);
+        }
+    }
+
+    &__icon {
+        box-sizing: border-box;
+    }
+
+    &__image {
+        position: absolute;
+        bottom: toRem(-16);
+        right: 0;
+        width: toRem(140);
+        height: toRem(142);
+    }
+}

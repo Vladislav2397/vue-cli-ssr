@@ -1,0 +1,109 @@
+.card-user {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+
+    $b: &;
+
+    &__avatar,
+    &__text {
+        display: table-cell;
+    }
+
+    &__avatar {
+        vertical-align: top;
+    }
+
+    &__text {
+        @include fontSize(p4-regular);
+
+        vertical-align: middle;
+    }
+
+    &__name {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+    }
+
+    &__title {
+        min-height: toRem(16);
+    }
+
+    &--confirmed {
+        #{$b}__text {
+            padding-right: toRem(20);
+
+            &::before {
+                font-family: $icon;
+                content: '\ea0e';
+                font-size: toRem(16);
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                color: var(--textBrand);
+            }
+        }
+    }
+
+    &--type {
+        &-default {
+            #{$b}__name {
+                @include fontSize(p2, medium);
+
+                color: var(--textBase);
+            }
+
+            #{$b}__text {
+                vertical-align: middle;
+            }
+        }
+
+        &-extended {
+            .card-user {
+                &__name {
+                    @include fontSize(p4);
+                    @include marginLevel(bottom, black);
+
+                    font-weight: 400;
+                    color: var(--textSecondary);
+                }
+
+                &__title {
+                    @include fontSize(p4);
+
+                    color: var(--textBase);
+                }
+
+                &__text {
+                    &::before {
+                        top: toRem(17);
+                        transform: none;
+                    }
+                }
+            }
+        }
+    }
+
+    &--size {
+        &-xs {
+            #{$b}__avatar {
+                min-width: toRem(36);
+            }
+        }
+
+        &-s {
+            #{$b}__avatar {
+                min-width: toRem(40);
+            }
+        }
+
+        &-m {
+            #{$b}__avatar {
+                min-width: toRem(52);
+            }
+        }
+    }
+}

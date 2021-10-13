@@ -1,0 +1,77 @@
+.card-page {
+    display: block;
+    padding: toRem(16);
+    position: relative;
+
+    &.disabled {
+        box-shadow: none;
+        background-color: var(--backgroundBase);
+        border: 1px solid var(--controlBorderSecondary);
+
+        .card-page {
+            &__title {
+                display: inline-block;
+                color: var(--textSecondary);
+                position: relative;
+
+                &::before {
+                    content: '\ea09';
+                    font-family: 'icon', sans-serif;
+                    position: absolute;
+                    top: 0;
+                    right: toRem(26);
+                }
+            }
+        }
+    }
+
+    &__title {
+        padding-right: toRem(46);
+    }
+
+    &__counter {
+        @include positionLevel(top, pink);
+
+        position: absolute;
+        right: toRem(16 + 20 + 4);
+    }
+
+    &__chevron {
+        @include positionLevel(top, pink);
+
+        position: absolute;
+        right: toRem(16);
+        width: toRem(20);
+        height: toRem(20);
+        color: var(--textSecondary);
+
+        &::before {
+            content: '\ea0f';
+            font-family: 'icon', sans-serif;
+            font-size: toRem(18);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+    &__content {
+        overflow: hidden;
+    }
+
+    &__container {
+        padding-top: toRem(16 + 5);
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: toRem(16);
+            left: 0;
+            right: 0;
+            height: 1px;
+            background-color: var(--controlBorderBase);
+        }
+    }
+}

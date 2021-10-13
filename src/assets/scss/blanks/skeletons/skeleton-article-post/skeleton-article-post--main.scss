@@ -1,0 +1,18 @@
+.skeleton-article-post {
+    padding: toRem(16) toRem(16) toRem(12);
+    position: relative;
+    overflow: hidden;
+
+    &__user {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__title {
+        @include marginLevel(bottom, red);
+    }
+
+    &__divider {
+        @include marginLevel(top, pink);
+        @include marginLevel(bottom, blue);
+    }
+}

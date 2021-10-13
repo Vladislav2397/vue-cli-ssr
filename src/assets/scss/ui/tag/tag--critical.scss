@@ -1,0 +1,47 @@
+.tag {
+    display: inline-block;
+    padding: toRem(6) toRem(10);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+    border-radius: $borderRadiusUI;
+    position: relative;
+    border: 2px solid transparent;
+    overflow: hidden;
+    background-color: var(--backgroundBase);
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--controlBackgroundBaseActive);
+        opacity: 0;
+        z-index: 0;
+    }
+
+    &.active {
+        border: 2px solid var(--controlBorderBrandSecondary);
+
+        &::before {
+            opacity: 1;
+        }
+    }
+
+    &__icon,
+    &__text {
+        vertical-align: middle;
+        color: var(--textBrand);
+    }
+
+    &__icon {
+        margin-right: toRem(6);
+        font-size: toRem(18);
+    }
+
+    &__text {
+        @include fontSize(p3);
+
+        position: relative;
+    }
+}

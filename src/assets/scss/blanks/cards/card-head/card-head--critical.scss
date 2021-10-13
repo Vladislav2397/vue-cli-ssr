@@ -1,0 +1,118 @@
+.card-head {
+    @include paddingLevel(top, pink);
+
+    position: relative;
+    background-color: var(--white);
+    padding-left: toRem(16);
+    padding-right: toRem(16);
+    box-sizing: border-box;
+
+    &__text {
+        @include fontSize(p2);
+        @include marginLevel(bottom, blue);
+
+        font-weight: 500;
+        vertical-align: middle;
+    }
+
+    &__title {
+        display: inline-block;
+        color: var(--textBase);
+        margin-right: toRem(4);
+    }
+
+    &__counter {
+        color: var(--textSecondary);
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__divider {
+        @include marginLevel(top, pink);
+        @include marginLevel(bottom, blue);
+    }
+
+    &--view {
+        &-reviews {
+            .card-head {
+                &__divider {
+                    @include marginLevel(top, yellow);
+                }
+            }
+        }
+
+        &-publications {
+            .card-head {
+                &__divider {
+                    @include marginLevel(top, pink);
+                }
+            }
+        }
+
+        &-settings {
+            .card-head {
+                &__button {
+                    width: auto;
+
+                    @media (max-width: $maxMobile) {
+                        display: none;
+                    }
+                }
+
+                &__divider {
+                    @include marginLevel(top, pink);
+                    @include marginLevel(bottom, orange);
+                }
+            }
+        }
+
+        &-notification {
+            .card-head {
+                &__divider {
+                    @include marginLevel(top, pink);
+                    @include marginLevel(bottom, orange);
+                }
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        @include paddingLevel(top, yellow);
+
+        padding-left: toRem(24);
+        padding-right: toRem(24);
+
+        &__text {
+            display: inline-block;
+            width: 50%;
+            margin-bottom: 0;
+        }
+
+        &__action {
+            display: inline-block;
+            width: 50%;
+            text-align: right;
+            vertical-align: middle;
+        }
+
+        &__button {
+            width: toRem(180);
+        }
+
+        &--view {
+            &-reviews {
+                .card-head {
+                    &__text {
+                        width: 45%;
+                    }
+
+                    &__action {
+                        width: 55%;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+.profile {
+    &__data {
+        @include marginLevel(bottom, pink);
+
+        padding: toRem(20) toRem(16);
+
+        &--no-auth {
+            padding-bottom: 0;
+        }
+
+        @media (max-width: $maxMobile) {
+            border-radius: 0;
+        }
+    }
+
+    @media (max-width: $maxMobile) {
+        &__count {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+        }
+    }
+
+    &__post {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__data {
+            position: relative;
+            padding: toRem(20) toRem(24);
+
+            &--no-auth {
+                padding-bottom: 0;
+            }
+        }
+    }
+}

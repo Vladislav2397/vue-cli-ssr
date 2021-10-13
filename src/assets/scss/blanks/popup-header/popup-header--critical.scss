@@ -1,0 +1,69 @@
+.popup-header {
+    &__main {
+        padding-left: toRem(16);
+        padding-right: toRem(8);
+
+        &--size {
+            &-m {
+                @include paddingLevel(both, red);
+            }
+
+            &-l {
+                @include paddingLevel(both, green);
+            }
+        }
+    }
+
+    &__addition {
+        @include paddingLevel(both, purple);
+
+        padding-left: toRem(4);
+        padding-right: toRem(16);
+    }
+
+    &__title-container {
+        @include paddingLevel(top, blue);
+        @include paddingLevel(bottom, blue);
+
+        display: inline-block;
+        width: calc(100% - (38 / 12 * 1rem) - (16 / 12 * 1rem));
+    }
+
+    &__title,
+    &__button--close {
+        vertical-align: middle;
+    }
+
+    &__title {
+        color: var(--textBase);
+    }
+
+    &__button {
+        &--close {
+            color: var(--textSecondary);
+            margin-left: toRem(16);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__main {
+            &--size {
+                &-m {
+                    @include paddingLevel(both, green);
+                }
+
+                &-l {
+                    @include paddingLevel(both, purple);
+
+                    padding-left: toRem(24);
+                    padding-right: toRem(16);
+                }
+            }
+        }
+
+        &__addition {
+            padding-left: toRem(12);
+            padding-right: toRem(32);
+        }
+    }
+}

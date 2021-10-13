@@ -1,0 +1,41 @@
+.badge {
+    border-radius: $borderRadiusUI;
+    display: inline-block;
+
+    &--size {
+        &-m {
+            padding: 0 toRem(8);
+            line-height: toRem(24);
+        }
+
+        &-s {
+            padding: 0 toRem(6);
+            line-height: toRem(20);
+        }
+    }
+
+    &--view {
+        &-success {
+            background-color: var(--controlBackgroundSuccessSecondary);
+            color: var(--textSuccess);
+        }
+
+        &-base {
+            background-color: var(--backgroundSecondary);
+            color: var(--textSecondary);
+            border: 1px solid #{rgba(#ccd3db, 0.5)};
+        }
+
+        &-critical {
+            background-color: var(--controlBackgroundCriticalTransparent);
+            color: var(--textCritical);
+            border: 1px solid var(--controlBorderCritical);
+        }
+
+        &-brand-secondary {
+            background: var(--controlBackgroundBrandSecondary);
+            color: var(--textBrand);
+            border: 1px solid var(--controlBorderBrand);
+        }
+    }
+}

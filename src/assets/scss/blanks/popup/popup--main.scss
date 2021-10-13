@@ -1,0 +1,88 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--backgroundOverlay);
+    z-index: 6;
+
+    &__inner {
+        position: absolute;
+        left: 0;
+        overflow: hidden;
+
+        @media (max-width: $maxMobile) {
+            right: 0;
+            bottom: 0;
+            max-height: calc(100vh - 2rem);
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        &--stretch {
+            height: 100%;
+        }
+    }
+
+    &__header,
+    &__footer {
+        position: absolute;
+        width: 100%;
+        background-color: var(--white);
+        z-index: 2;
+    }
+
+    &__header {
+        top: 0;
+    }
+
+    &__body {
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+        box-sizing: border-box;
+        height: 100%;
+        min-height: toRem(421);
+
+        &--form {
+            padding-left: toRem(16);
+            padding-right: toRem(16);
+        }
+    }
+
+    &__footer {
+        @include paddingLevel(top, purple);
+        @include paddingLevel(bottom, pink);
+
+        border-top: 1px solid var(--controlBorderBase);
+        box-sizing: border-box;
+        bottom: 0;
+    }
+
+    @media (min-width: $tablet) {
+        @include paddingLevel(both, gray);
+
+        min-height: toRem(417);
+
+        &__inner {
+            position: relative;
+            width: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: toRem(480);
+            max-height: 100%;
+        }
+
+        &__body {
+            min-height: toRem(417);
+            border-top: toRem(61) solid;
+
+            &--form {
+                padding-left: toRem(24);
+                padding-right: toRem(24);
+            }
+        }
+    }
+}

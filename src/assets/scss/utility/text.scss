@@ -1,0 +1,110 @@
+.text {
+    @include fontSize(p3);
+
+    color: var(--textBase);
+
+    & > *:first-child {
+        margin-top: 0;
+    }
+
+    & > *:last-child {
+        margin-bottom: 0;
+    }
+
+    .image {
+        @include marginLevel(top, pink);
+
+        margin-bottom: toRem(24);
+    }
+
+    p {
+        @include marginLevel(both, blue);
+    }
+
+    & > ul {
+        @include marginLevel(top, purple);
+        @include marginLevel(bottom, blue);
+
+        li {
+            padding-left: toRem(14);
+            position: relative;
+
+            &::before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '\2022';
+                font-size: toRem(20);
+                color: var(--textSecondary);
+            }
+
+            & + li {
+                @include marginLevel(top, blue);
+            }
+        }
+    }
+
+    h1,
+    h2 {
+        @include paddingLevel(top, purple);
+
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    h1 {
+        @include fontSize(p2, medium);
+    }
+
+    h2 {
+        @include fontSize(p3, medium);
+    }
+
+    b {
+        font-weight: 500;
+    }
+
+    ul,
+    ol {
+        @include paddingLevel(top, blue);
+
+        padding-left: toRem(14);
+
+        li {
+            @include fontSize(p3);
+
+            padding: 0;
+            list-style: disc;
+
+            &::marker {
+                color: var(--textSecondary);
+                width: toRem(14);
+            }
+
+            & + li {
+                @include paddingLevel(top, blue);
+            }
+        }
+    }
+
+    blockquote {
+        @include fontSize(p3, italic);
+        @include marginLevel(top, purple);
+
+        min-height: toRem(18);
+        border-left: 2px solid var(--controlBorderBase);
+        padding-left: toRem(8);
+        color: var(--textSecondary);
+    }
+
+    &--editorjs {
+        caret-color: var(--textBrand);
+
+        .ce-paragraph {
+            @include paddingLevel(top, pink);
+
+            padding-bottom: 0;
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.tabs-navigation {
+    &__item {
+        transition: color 0.3s ease;
+
+        &::before {
+            transition: opacity 0.3s ease;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        &__item {
+            cursor: pointer;
+
+            &:hover:not(.disabled) {
+                color: var(--textBase);
+            }
+        }
+    }
+}

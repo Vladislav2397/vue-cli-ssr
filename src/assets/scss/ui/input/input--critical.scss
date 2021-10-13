@@ -1,0 +1,161 @@
+.input {
+    $b: &;
+
+    position: relative;
+
+    &__value {
+        font-size: inherit;
+        line-height: inherit;
+        color: inherit;
+
+        &:-webkit-autofill,
+        &:-webkit-autofill:hover,
+        &:-webkit-autofill:focus,
+        &:-webkit-autofill:active {
+            -webkit-box-shadow: 0 0 0 toRem(56) white inset !important;
+        }
+    }
+
+    &__field {
+        position: relative;
+        cursor: text;
+        color: var(--textPlaceholder);
+
+        &.filled {
+            color: var(--textBase);
+        }
+
+        &.focus {
+            color: var(--textBase);
+
+            input,
+            textarea {
+                border: 1px solid var(--controlBorderBrand);
+            }
+        }
+
+        input,
+        textarea {
+            border: 1px solid var(--controlBorderBase);
+            border-radius: $borderRadiusUI;
+            width: 100%;
+            background: var(--controlBackgroundBase);
+            box-sizing: border-box;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            padding: 0 toRem(12);
+            overflow-y: auto;
+        }
+
+        textarea {
+            min-height: toRem(80);
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        &--size {
+            &-l {
+                @include fontSize(control-large);
+
+                input,
+                #{$b}__placeholder,
+                #{$b}__prefix {
+                    line-height: toRem(44);
+                }
+
+                textarea {
+                    padding-top: toRem(12);
+                    padding-bottom: toRem(12);
+                }
+            }
+
+            &-m {
+                @include fontSize(control-medium);
+
+                input,
+                #{$b}__placeholder,
+                #{$b}__prefix {
+                    line-height: toRem(40);
+                }
+
+                textarea {
+                    padding-top: toRem(10);
+                    padding-bottom: toRem(10);
+                }
+            }
+        }
+
+        &.disabled {
+            opacity: 0.5;
+        }
+
+        &.error {
+            input {
+                border-color: var(--controlBorderCritical);
+                background-color: var(--controlBackgroundCriticalTransparent);
+            }
+        }
+    }
+
+    &__prefix,
+    &__placeholder {
+        font-size: inherit;
+        line-height: inherit;
+        height: inherit;
+        color: inherit;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: toRem(12);
+    }
+
+    .icon::before {
+        font-size: toRem(20);
+    }
+
+    &__prefix + input {
+        padding-left: toRem(32);
+
+        & + #{$b}__placeholder {
+            left: toRem(32);
+        }
+    }
+
+    textarea + &__placeholder {
+        top: 0;
+        transform: none;
+    }
+
+    &__label,
+    &__description {
+        @include fontSize(p4);
+
+        color: var(--textSecondary);
+    }
+
+    &__label {
+        @include marginLevel(bottom, blue);
+    }
+
+    &__other {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__description {
+        @include marginLevel(top, blue);
+    }
+
+    i.icon {
+        color: var(--textPlaceholder);
+    }
+
+    &__postfix {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: toRem(12);
+        height: toRem(20);
+    }
+}

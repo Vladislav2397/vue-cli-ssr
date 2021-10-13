@@ -1,0 +1,80 @@
+.share-list {
+    padding: toRem(8) 0 toRem(8) toRem(16);
+
+    &__link {
+        @include fontSize(p4);
+
+        @media (max-width: $tablet) {
+            & + & {
+                border-top: 1px solid rgba(204, 211, 219, 0.5);
+            }
+        }
+
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
+        color: var(--textBase);
+        display: block;
+        vertical-align: middle;
+
+        &::before {
+            font-family: $icon;
+            font-size: toRem(16);
+            margin-right: toRem(6);
+            vertical-align: middle;
+        }
+
+        &--copy {
+            &::before {
+                content: '\ea1b';
+                color: var(--textBrand);
+            }
+        }
+
+        &--vk {
+            &::before {
+                content: '\ea25';
+                color: #2787f5;
+            }
+        }
+
+        &--twitter {
+            &::before {
+                content: '\ea1f';
+                color: #1da1f2;
+            }
+        }
+
+        &--facebook {
+            &::before {
+                content: '\ea1c';
+                color: #1877f2;
+            }
+        }
+
+        &--telegram {
+            &::before {
+                content: '\ea1e';
+                color: #26a4e3;
+            }
+        }
+
+        &--ok {
+            &::before {
+                content: '\ea1d';
+                color: #f7931e;
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        padding: toRem(16);
+
+        &__link {
+            padding: 0;
+
+            & + & {
+                margin-top: toRem(16);
+            }
+        }
+    }
+}

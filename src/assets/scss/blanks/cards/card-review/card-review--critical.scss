@@ -1,0 +1,234 @@
+.card-review {
+    @include paddingLevel(top, purple);
+
+    box-sizing: border-box;
+    padding-left: toRem(12);
+    padding-right: toRem(12);
+    position: relative;
+
+    &__user {
+        @media (max-width: $maxMobile) {
+            @include marginLevel(bottom, blue);
+        }
+    }
+
+    &__information {
+        @include fontSize(p4);
+
+        color: var(--textSecondary);
+    }
+
+    &__status {
+        @include marginLevel(bottom, black);
+
+        &::before {
+            font-family: $icon;
+            font-size: 16px;
+            margin-right: toRem(2);
+            vertical-align: middle;
+        }
+
+        &--icon {
+            &-lock {
+                &::before {
+                    content: '\ea09';
+                }
+            }
+
+            &-check {
+                &::before {
+                    content: '\ea11';
+                }
+            }
+        }
+    }
+
+    &__rating {
+        @include marginLevel(top, blue);
+        @include marginLevel(bottom, blue);
+
+        font-feature-settings: 'tnum' on, 'lnum' on;
+    }
+
+    &__text {
+        @include paddingLevel(bottom, purple);
+
+        position: relative;
+    }
+
+    &__description {
+        @include marginLevel(bottom, green);
+        @include fontSize(p4);
+
+        -webkit-line-clamp: 7;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        color: var(--textBase);
+        position: relative;
+    }
+
+    &__link {
+        &--body {
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+            }
+        }
+    }
+
+    &__buttons {
+        @include paddingLevel(top, purple);
+        @include paddingLevel(bottom, purple);
+    }
+
+    &__button {
+        width: 100%;
+
+        &--success {
+            @media (max-width: $maxMobile) {
+                @include marginLevel(bottom, blue);
+            }
+        }
+    }
+
+    &__action {
+        @include marginLevel(top, blue);
+        @include paddingLevel(bottom, blue);
+    }
+
+    &--popup {
+        padding-top: 0;
+        padding-left: 0;
+        padding-right: 0;
+
+        &.card-review {
+            &--type {
+                &-moderation-base {
+                    .card-review__text {
+                        padding-bottom: toRem(117);
+                    }
+                }
+
+                &-base,
+                &-moderation-rejected {
+                    .card-review__text {
+                        padding-bottom: toRem(62);
+                    }
+                }
+            }
+        }
+
+        .card-review {
+            &__description {
+                -webkit-line-clamp: 0;
+                display: inline-block;
+                overflow: auto;
+                margin-bottom: 0;
+            }
+
+            &__content {
+                @include paddingLevel(top, pink);
+
+                overflow-y: auto;
+                padding-left: toRem(16);
+                padding-right: toRem(16);
+                max-height: calc(100vh - 6.75rem);
+            }
+
+            &__footer {
+                padding-left: toRem(16);
+                padding-right: toRem(16);
+                position: fixed;
+                bottom: -1px;
+                width: 100%;
+                left: 0;
+                box-sizing: border-box;
+                background-color: var(--backgroundBase);
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__user {
+            display: inline-block;
+            vertical-align: middle;
+
+            @media (min-width: $tablet) {
+                width: 50%;
+            }
+        }
+
+        &__information {
+            display: inline-block;
+            text-align: right;
+            vertical-align: middle;
+
+            @media (min-width: $tablet) {
+                width: 50%;
+            }
+        }
+
+        &__description {
+            -webkit-line-clamp: 4;
+        }
+
+        &__button {
+            width: calc(50% - 0.333rem);
+
+            & + & {
+                margin-left: toRem(8);
+            }
+        }
+
+        &--type {
+            &-moderation-rejected {
+                .card-review {
+                    &__user {
+                        @media (min-width: $tablet) {
+                            width: 40%;
+                        }
+                    }
+
+                    &__information {
+                        @media (min-width: $tablet) {
+                            width: 60%;
+                        }
+                    }
+
+                    &__date {
+                        @include marginLevel(bottom, black);
+                    }
+                }
+            }
+        }
+
+        &--popup {
+            &.card-review {
+                &--type {
+                    &-moderation-base {
+                        .card-review__text {
+                            padding-bottom: toRem(73);
+                        }
+                    }
+                }
+            }
+
+            .card-review {
+                &__content {
+                    max-height: calc(100vh - 10.75rem);
+                }
+
+                &__footer {
+                    border-bottom-right-radius: $borderRadiusSectionMobile;
+                    border-bottom-left-radius: $borderRadiusSectionMobile;
+                }
+            }
+        }
+    }
+}

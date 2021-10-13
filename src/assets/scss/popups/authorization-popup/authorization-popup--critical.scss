@@ -1,0 +1,78 @@
+.authorization-popup {
+    &__tabs {
+        @include marginLevel(bottom, pink);
+
+        width: 100%;
+    }
+
+    &__input {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+
+    &__button {
+        margin-top: toRem(52);
+        width: 100%;
+    }
+
+    &__body {
+        @include paddingLevel(top, pink);
+        @include paddingLevel(bottom, yellow);
+    }
+
+    &__register {
+        @include marginLevel(top, pink);
+
+        text-align: center;
+
+        span {
+            @include fontSize(p4);
+
+            color: var(--textSecondary);
+            margin-right: toRem(4);
+        }
+    }
+
+    &__redirect {
+        position: absolute;
+
+        @media (max-width: $maxMobile) {
+            top: 50%;
+            transform: translateY(-50%);
+            left: toRem(16);
+            max-width: toRem(288);
+        }
+    }
+
+    &__banner {
+        max-width: toRem(288);
+    }
+
+    @media (min-width: $tablet) {
+        &__image {
+            position: absolute;
+            width: toRem(136);
+            bottom: 0;
+            right: 0;
+        }
+
+        &__button {
+            margin-top: toRem(40);
+        }
+
+        &__redirect {
+            height: toRem(296);
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+
+        &__banner {
+            max-width: toRem(280);
+            position: absolute;
+            bottom: toRem(87);
+            left: toRem(32);
+        }
+    }
+}

@@ -4,14 +4,17 @@ import './registerServiceWorker'
 import createRouter from './router'
 import createStore from './store'
 
+import './globals'
+
 Vue.config.productionTip = false
 
-export default () => {
+export default (): Vue => {
     const store = createStore()
     const router = createRouter()
+
     return new Vue({
         router,
         store,
         render: (h) => h(App)
     })
-};
+}

@@ -1,0 +1,46 @@
+.input {
+    $b: &;
+
+    &__value {
+        transition: 0.3s ease;
+        transition-property: color, border-color;
+    }
+
+    @media (min-width: $desktop) {
+        &.error {
+            #{$b}__value,
+            #{$b}__value:hover,
+            #{$b}__value:focus {
+                background-color: var(--controlBackgroundCriticalTransparent);
+                border-color: var(--controlBorderCritical);
+            }
+        }
+
+        &__field:not(.disabled):not(.error) {
+            &:hover {
+                &:not(.focus) #{$b}__prefix,
+                #{$b}__placeholder {
+                    color: var(--textPlaceholderFocus);
+                }
+
+                #{$b}__value:not(.focus):not([disabled]) {
+                    border-color: var(--controlBorderBaseHover);
+                }
+            }
+        }
+
+        &__prefix,
+        &__placeholder,
+        i.icon {
+            transition: color 0.3s ease;
+        }
+
+        i.icon {
+            cursor: pointer;
+
+            &:hover {
+                color: var(--textSecondary);
+            }
+        }
+    }
+}

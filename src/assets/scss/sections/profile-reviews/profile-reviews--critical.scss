@@ -1,0 +1,39 @@
+.profile-reviews {
+    &__header {
+        @include marginLevel(bottom, pink);
+
+        @media (max-width: $maxMobile) {
+            @include paddingLevel(top, yellow);
+
+            background-color: var(--white);
+        }
+    }
+
+    &__head {
+        @media (max-width: $maxMobile) {
+            box-shadow: none;
+            border-radius: 0;
+        }
+    }
+
+    &__navigation {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    &__content {
+        @include paddingLevel(bottom, yellow);
+    }
+
+    &__reviews {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__button {
+            @include marginLevel(bottom, pink);
+        }
+    }
+}

@@ -1,0 +1,40 @@
+.not-found {
+    @include paddingLevel(top, yellow);
+
+    &__card {
+        @include paddingLevel(top, yellow);
+        @include paddingLevel(bottom, yellow);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+        text-align: center;
+        background-color: var(--backgroundBase);
+    }
+
+    &__image {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__title {
+        @include marginLevel(bottom, blue);
+
+        color: var(--textBase);
+    }
+
+    &__description {
+        @include fontSize(p3);
+
+        width: toRem(256);
+        margin: 0 auto;
+        color: var(--textSecondary);
+    }
+
+    @media (min-width: $tablet) {
+        padding-top: 0;
+
+        @media (max-width: $maxTablet) {
+            padding-left: toRem(32);
+            padding-right: toRem(32);
+        }
+    }
+}

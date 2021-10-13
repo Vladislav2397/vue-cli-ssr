@@ -1,0 +1,15 @@
+.card-reputation {
+    position: relative;
+    padding: toRem(16);
+
+    &__title {
+        padding-right: toRem(24);
+        display: block;
+    }
+
+    &__icon {
+        position: absolute;
+        top: toRem(16);
+        right: toRem(16);
+    }
+}

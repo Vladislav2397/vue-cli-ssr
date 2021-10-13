@@ -1,0 +1,59 @@
+.about {
+    @include paddingLevel(bottom, gray);
+
+    @media (max-width: $maxMobile) {
+        @include paddingLevel(top, yellow);
+
+        &__container {
+            padding: 0 toRem(8);
+        }
+    }
+
+    &__section {
+        & + & {
+            @include marginLevel(top, gray);
+        }
+    }
+
+    &__card {
+        &--header {
+            @include marginLevel(bottom, gray);
+        }
+
+        &--footer {
+            @include marginLevel(top, pink);
+        }
+
+        & + & {
+            @include marginLevel(top, pink);
+        }
+    }
+
+    &__title {
+        @include marginLevel(bottom, pink);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__banner {
+        padding: toRem(16);
+        position: relative;
+    }
+
+    &__button {
+        @include marginLevel(top, pink);
+
+        width: 100%;
+    }
+
+    @media (min-width: $tablet) {
+        &__image {
+            position: absolute;
+            width: toRem(130);
+            height: toRem(138);
+            right: 0;
+            bottom: 0;
+        }
+    }
+}

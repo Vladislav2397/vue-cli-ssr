@@ -1,0 +1,33 @@
+.tag-group {
+    &__inner {
+        overflow-x: scroll;
+        white-space: nowrap;
+        padding: 0 toRem(16);
+        padding-top: toRem(12);
+        padding-bottom: toRem(12);
+        margin-top: toRem(-12);
+        margin-bottom: toRem(-12);
+    }
+
+    @media (max-width: 559px) {
+        &__item {
+            & + & {
+                margin-left: toRem(6);
+            }
+        }
+    }
+
+    @media (min-width: 520px) {
+        &__inner {
+            white-space: normal;
+            overflow: visible;
+            margin-right: toRem(-6);
+            margin-bottom: toRem(-8);
+        }
+
+        &__item {
+            margin-right: toRem(6);
+            margin-bottom: toRem(8);
+        }
+    }
+}

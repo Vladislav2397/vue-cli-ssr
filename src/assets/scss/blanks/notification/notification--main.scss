@@ -1,0 +1,117 @@
+.notification {
+    @include paddingLevel(bottom, yellow);
+
+    text-align: left;
+
+    @media (max-width: $maxMobile) {
+        border-radius: $borderRadiusTopSectionMobile;
+    }
+
+    &__body {
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+
+        p {
+            @include marginLevel(bottom, purple);
+
+            color: var(--textSecondary);
+        }
+    }
+
+    &__list {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__item {
+        & + & {
+            @include marginLevel(top, blue);
+        }
+    }
+
+    &__action {
+        width: 100%;
+    }
+
+    &__empty {
+        text-align: center;
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+
+        h3 {
+            @include marginLevel(bottom, red);
+
+            color: var(--textBase);
+        }
+
+        p {
+            @include fontSize(p4);
+
+            color: var(--textSecondary);
+        }
+
+        .notification {
+            &__image {
+                @include marginLevel(bottom, purple);
+
+                width: toRem(170);
+                height: toRem(174);
+                display: inline-block;
+            }
+        }
+    }
+
+    @media (max-width: $maxMobile) {
+        &__header {
+            @include paddingLevel(both, green);
+            @include marginLevel(bottom, pink);
+
+            position: relative;
+            border-bottom: 1px solid var(--controlBorderBase);
+            padding-left: toRem(16);
+            padding-right: toRem(8);
+            min-height: toRem(36);
+        }
+
+        &__title {
+            @include paddingLevel(both, blue);
+
+            display: block;
+        }
+
+        &__close {
+            position: absolute;
+            top: toRem(6);
+            right: toRem(8);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        @include paddingLevel(both, pink);
+
+        border: 1px solid var(--controlBorderSecondary);
+
+        &__arrow {
+            position: absolute;
+            right: toRem(14);
+            top: toRem(-12);
+            width: toRem(24);
+            height: toRem(12);
+            z-index: 1;
+
+            img {
+                height: 100%;
+            }
+
+            &::before {
+                width: toRem(24);
+                height: toRem(12);
+            }
+        }
+
+        &__header {
+            @include marginLevel(bottom, black);
+
+            padding-left: toRem(16);
+        }
+    }
+}

@@ -1,0 +1,77 @@
+.sidebar {
+    width: toRem(248);
+    padding-left: toRem(16);
+    box-sizing: border-box;
+    position: fixed;
+    left: 0;
+    min-height: toRem(450);
+    top: 0;
+    bottom: 0;
+    z-index: $z-index-sidebar;
+
+    &__footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: toRem(20) toRem(32) toRem(24);
+    }
+
+    &__banner {
+        @include marginLevel(bottom, orange);
+    }
+
+    &__privacy {
+        a,
+        p {
+            @include fontSize(p4);
+        }
+
+        p {
+            @include marginLevel(bottom, red);
+
+            color: var(--textSecondary);
+        }
+
+        a {
+            color: var(--textBrand);
+        }
+    }
+
+    @media (max-width: $maxMobileLate) {
+        @include paddingLevel(top, pink);
+
+        background-color: var(--backgroundSecondary);
+        padding-right: toRem(32);
+        box-shadow: var(--elevationBase);
+
+        &__button {
+            position: absolute;
+            top: toRem(16);
+            right: toRem(-44 - 8);
+            color: var(--textBrand);
+        }
+    }
+
+    @media (min-width: $tabletLate) {
+        width: toRem(219);
+        position: fixed;
+        padding-top: toRem(72);
+        z-index: 4;
+        box-sizing: border-box;
+
+        &__footer {
+            padding: toRem(20) 0 toRem(16);
+            left: toRem(32);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        width: toRem(240);
+        padding-left: toRem(8);
+
+        &__footer {
+            left: toRem(24);
+        }
+    }
+}

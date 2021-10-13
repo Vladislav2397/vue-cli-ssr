@@ -1,0 +1,42 @@
+.spinner {
+    display: inline-block;
+
+    &::before {
+        content: '';
+        display: block;
+        width: toRem(14);
+        height: toRem(14);
+        border: toRem(2) solid;
+        border-radius: 50%;
+        animation: loading 1s infinite linear;
+    }
+
+    &--view {
+        &-brand-primary {
+            &::before {
+                border-color: var(--controlBorderSecondary);
+                border-top-color: var(--backgroundBase);
+            }
+        }
+
+        &-brand-secondary {
+            &::before {
+                border-color: var(--controlBackgroundBrandSecondaryTransparent);
+                border-top-color: var(--textBrand);
+            }
+        }
+
+        &-critical {
+            &::before {
+                border-color: var(--backgroundCritical);
+                border-top-color: var(--textCritical);
+            }
+        }
+    }
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}

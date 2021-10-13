@@ -1,0 +1,120 @@
+.tooltip {
+    position: fixed;
+    z-index: 4;
+    opacity: 0;
+    transition: 0.3s ease;
+    transition-property: opacity;
+
+    @media (max-width: $tablet) {
+        left: 0 !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        top: 0 !important;
+        width: 100%;
+        background: var(--backgroundOverlay);
+    }
+
+    &__wrapper {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        border-top-left-radius: $borderRadiusSectionMobile;
+        border-top-right-radius: $borderRadiusSectionMobile;
+        background-color: var(--backgroundBase);
+        border: 1px solid var(--controlBorderSecondary);
+        box-shadow: var(--elevationBase);
+        box-sizing: border-box;
+    }
+
+    &__arrow {
+        display: none;
+    }
+
+    &__head {
+        padding: toRem(14) toRem(16);
+        border-bottom: 1px solid var(--controlBorderBase);
+    }
+
+    &__title {
+        @include fontSize(p2);
+
+        display: inline-block;
+        font-weight: 500;
+        vertical-align: middle;
+        text-align: left;
+        width: calc(100% - 1.666rem);
+    }
+
+    &__close {
+        display: inline-block;
+        vertical-align: middle;
+        text-align: right;
+        position: relative;
+        width: toRem(20);
+        height: toRem(20);
+
+        &::before {
+            content: '\ea21';
+            font-family: $icon;
+            font-size: toRem(20);
+            color: var(--textSecondary);
+        }
+    }
+
+    &.active {
+        opacity: 1;
+    }
+
+    @media (min-width: $tablet) {
+        min-width: toRem(50);
+        max-width: toRem(300);
+
+        &__head {
+            display: none;
+        }
+
+        &__arrow {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: toRem(16);
+            transform: rotate(180deg);
+            z-index: 5;
+
+            img {
+                width: toRem(24);
+                display: block;
+                margin-top: -1px;
+            }
+        }
+
+        &__wrapper {
+            position: relative;
+            border-radius: $borderRadiusSectionMobile;
+
+            &--bottom {
+                .tooltip {
+                    &__arrow {
+                        top: auto;
+                        bottom: 100%;
+                        transform: none;
+
+                        img {
+                            margin-top: 0;
+                            margin-bottom: -1px;
+                        }
+                    }
+                }
+            }
+
+            &--right {
+                .tooltip {
+                    &__arrow {
+                        left: auto;
+                        right: toRem(16);
+                    }
+                }
+            }
+        }
+    }
+}

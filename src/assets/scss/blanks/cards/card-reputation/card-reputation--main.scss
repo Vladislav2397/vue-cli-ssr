@@ -1,0 +1,8 @@
+.card-reputation {
+    @media (min-width: $desktop) {
+        &__title,
+        &__icon {
+            cursor: pointer;
+        }
+    }
+}

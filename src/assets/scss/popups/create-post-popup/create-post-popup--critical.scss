@@ -1,0 +1,106 @@
+.create-post-popup {
+    &__form {
+        @include paddingLevel(both, pink);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__input {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__select {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__label {
+        @include fontSize(p3);
+        @include marginLevel(bottom, blue);
+
+        color: var(--textSecondary);
+    }
+
+    &__image {
+        position: relative;
+        height: 0;
+        padding-bottom: 66.51%;
+        overflow: hidden;
+        border-radius: $borderRadiusUI;
+
+        img {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: 100%;
+        }
+    }
+
+    &__button {
+        &--avatar {
+            @include marginLevel(bottom, pink);
+
+            width: 100%;
+        }
+
+        &--remove {
+            position: absolute;
+            top: toRem(8);
+            right: toRem(8);
+        }
+    }
+
+    &__datepicker {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 3;
+
+        @media (max-width: $maxMobile) {
+            right: 0;
+        }
+    }
+
+    &__footer {
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    @media (max-width: $maxMobile) {
+        &__button {
+            &--select,
+            &--public {
+                width: 49.3%;
+            }
+
+            &--public {
+                margin-left: 1.38%;
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__form {
+            padding-left: toRem(24);
+            padding-right: toRem(24);
+        }
+
+        &__footer {
+            padding-left: toRem(24);
+            padding-right: toRem(24);
+        }
+
+        &__datepicker {
+            bottom: toRem(60);
+        }
+
+        &__button {
+            & + & {
+                position: absolute;
+                right: toRem(24);
+            }
+        }
+    }
+}

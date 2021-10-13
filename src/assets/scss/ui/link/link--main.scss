@@ -1,0 +1,27 @@
+.link {
+    cursor: pointer;
+
+    &::after {
+        transition: 0.3s ease;
+        transition-property: color, transform;
+    }
+
+    @media (min-width: $desktop) {
+        transition: color 0.3s ease;
+
+        &--view {
+            &-brand:hover {
+                color: var(--textBrandHover);
+            }
+
+            &-secondary:hover {
+                color: var(--textBrand);
+            }
+        }
+
+        span {
+            transition: 0.3s ease;
+            transition-property: border-color;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+.notification-item {
+    position: relative;
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: toRem(24);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__content {
+        padding-left: toRem(30);
+    }
+
+    &__user,
+    &__text,
+    &__data {
+        @include fontSize(p4);
+    }
+
+    &__user {
+        display: inline-block;
+        color: var(--textBrand);
+        margin-right: toRem(4);
+    }
+
+    &__text {
+        color: var(--textBase);
+    }
+
+    &__data {
+        color: var(--textSecondary);
+    }
+}

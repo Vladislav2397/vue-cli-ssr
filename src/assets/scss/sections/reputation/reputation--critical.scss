@@ -1,0 +1,15 @@
+.reputation {
+    @include paddingLevel(bottom, yellow);
+
+    &__card {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+
+    &__action {
+        @include marginLevel(top, red);
+
+        width: 100%;
+    }
+}

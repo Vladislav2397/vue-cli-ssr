@@ -1,0 +1,39 @@
+.select {
+    &__input::before {
+        transition: transform 0.3s ease;
+    }
+
+    .fade-bottom-enter-active,
+    .fade-top-enter-active {
+        transition: transform, opacity 0.5s, 0.3s ease;
+    }
+
+    .fade-bottom-leave-active,
+    .fade-top-leave-active {
+        transition: transform, opacity 0.4s, 0.2s ease;
+    }
+
+    .fade-bottom-enter,
+    .fade-bottom-leave-to {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    .fade-top-enter,
+    .fade-top-leave-to {
+        opacity: 0;
+        transform: translateY(10%);
+    }
+
+    @media (min-width: $desktop) {
+        &__item {
+            transition: 0.3s ease;
+            transition-property: background-color, color, opacity;
+
+            &:hover {
+                background-color: var(--controlBackgroundBrandSecondaryTransparent);
+                color: var(--textBrand);
+            }
+        }
+    }
+}

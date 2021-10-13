@@ -1,0 +1,48 @@
+@import 'assets/scss/utility/animations';
+
+.skeleton-user-actions {
+    &__left,
+    &__right {
+        display: inline-block;
+        width: 50%;
+    }
+
+    &__right {
+        text-align: right;
+    }
+
+    &__comment,
+    &__rating,
+    &__button {
+        padding: toRem(8) toRem(6);
+        display: inline-block;
+        vertical-align: middle;
+
+        div {
+            background-color: var(--textSecondary);
+            opacity: 0.1;
+            width: toRem(20);
+            height: toRem(16);
+            border-radius: toRem(4);
+            animation: skeleton-pulse 3s ease infinite;
+        }
+    }
+
+    &__comment {
+        padding: toRem(10) toRem(12 + 4) toRem(10) toRem(6);
+
+        div {
+            width: toRem(42);
+            height: toRem(12);
+        }
+    }
+
+    &__rating {
+        padding: toRem(10) toRem(4);
+
+        div {
+            width: toRem(32);
+            height: toRem(12);
+        }
+    }
+}

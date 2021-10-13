@@ -1,0 +1,22 @@
+.select-item {
+    @media (min-width: $desktop) {
+        &__image {
+            &::before,
+            &::after {
+                transition: opacity 0.3s ease;
+            }
+        }
+
+        &:hover {
+            .select-item__image {
+                &::before {
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

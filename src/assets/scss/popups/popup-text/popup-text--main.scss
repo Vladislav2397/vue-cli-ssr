@@ -1,0 +1,10 @@
+.popup-text {
+    &__description {
+        @include fontSize(p4);
+        @include paddingLevel(top, pink);
+        @include paddingLevel(bottom, pink);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+}

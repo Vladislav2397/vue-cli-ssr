@@ -1,0 +1,44 @@
+.popup-reply {
+    &__body {
+        @include paddingLevel(top, pink);
+
+        overflow-y: auto;
+        overflow-x: hidden;
+        max-height: calc(100vh - 6.75rem);
+    }
+
+    &__wrapper {
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__review {
+        @include paddingLevel(top, pink);
+        @include marginLevel(bottom, yellow);
+
+        padding-left: toRem(12);
+        padding-right: toRem(12);
+        border: 1px solid var(--controlBorderBase);
+        border-radius: $borderRadiusSectionMobile;
+    }
+
+    &__form {
+        //
+    }
+
+    &__textarea {
+        @include marginLevel(bottom, pink);
+
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+
+    &__action {
+        @include paddingLevel(top, pink);
+        @include paddingLevel(bottom, pink);
+
+        text-align: right;
+        padding-left: toRem(16);
+        padding-right: toRem(16);
+    }
+}

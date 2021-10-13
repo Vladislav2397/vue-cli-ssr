@@ -1,0 +1,20 @@
+.button-store {
+    @media (min-width: $desktop) {
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &--view {
+            &-dark {
+                &:hover {
+                    background-color: rgba(#000, 0.8);
+                }
+            }
+
+            &-light {
+                &:hover {
+                    background-color: rgba(#fff, 0.8);
+                }
+            }
+        }
+    }
+}

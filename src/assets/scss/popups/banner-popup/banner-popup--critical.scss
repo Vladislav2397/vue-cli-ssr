@@ -1,0 +1,23 @@
+.banner-popup {
+    &__banner {
+        max-width: toRem(280);
+    }
+
+    @media (max-width: $maxMobile) {
+        text-align: center;
+
+        &__banner {
+            display: inline-block;
+            text-align: left;
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__image {
+            position: absolute;
+            top: toRem(40);
+            right: 0;
+            width: toRem(136);
+        }
+    }
+}

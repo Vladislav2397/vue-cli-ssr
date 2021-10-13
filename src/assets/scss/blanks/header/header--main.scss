@@ -1,0 +1,31 @@
+.header {
+    @media (max-width: $maxMobile) {
+        .popup-enter-active,
+        .popup-leave-active {
+            transition: transform 0.3s ease;
+        }
+
+        .popup-enter,
+        .popup-leave-to {
+            transform: translateY(100%);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        .popup-enter-active,
+        .popup-leave-active {
+            transition: opacity 0.3s ease;
+        }
+
+        .popup-enter,
+        .popup-leave-to {
+            opacity: 0;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        &__user {
+            cursor: pointer;
+        }
+    }
+}

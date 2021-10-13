@@ -1,0 +1,62 @@
+.button {
+    &[disabled] {
+        pointer-events: none;
+    }
+
+    &--loading {
+        span {
+            opacity: 0;
+        }
+    }
+
+    @media (min-width: $desktop) {
+        transition-property: background-color, opacity, color;
+        transition-duration: 0.3s;
+        transition-timing-function: ease;
+
+        &::before,
+        &::after {
+            transition: opacity 0.3s ease;
+        }
+
+        &--view {
+            &-brand-primary:hover {
+                background-color: var(--controlBackgroundBrandHover);
+            }
+
+            &-brand-secondary:hover {
+                &::before {
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &-critical:hover {
+                &::before {
+                    opacity: 0;
+                }
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &-ghost:hover {
+                background-color: var(--backgroundSecondary);
+            }
+
+            &-ghost-brand:hover {
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+            &-default:hover {
+                color: var(--textBrand);
+            }
+        }
+    }
+}

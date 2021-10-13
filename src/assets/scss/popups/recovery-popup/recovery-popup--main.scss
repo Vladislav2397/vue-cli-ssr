@@ -1,0 +1,48 @@
+.recovery-popup {
+    &__body {
+        @include paddingLevel(bottom, yellow);
+    }
+
+    &__title {
+        @include marginLevel(bottom, yellow);
+    }
+
+    &__input {
+        margin-bottom: toRem(176);
+    }
+
+    &__button {
+        width: 100%;
+    }
+
+    &__image {
+        width: toRem(260);
+        display: inline-block;
+    }
+
+    @media (max-width: $maxMobile) {
+        &__response {
+            @include paddingLevel(bottom, gray);
+        }
+
+        &__image {
+            @include marginLevel(bottom, orange);
+
+            min-height: toRem(160);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__input {
+            margin-bottom: toRem(164);
+        }
+
+        &__image {
+            width: toRem(422);
+            position: absolute;
+            top: toRem(38);
+            right: toRem(-127);
+            z-index: -1;
+        }
+    }
+}

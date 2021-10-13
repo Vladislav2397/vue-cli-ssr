@@ -1,0 +1,110 @@
+.card-profile {
+    &__company {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__addition {
+        @include marginLevel(bottom, pink);
+    }
+
+    &__item {
+        vertical-align: top;
+        position: relative;
+
+        @media (max-width: $maxMobile) {
+            & + & {
+                margin-top: toRem(17);
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    top: toRem(-9);
+                    left: 0;
+                    right: 0;
+                    height: 1px;
+                    background-color: var(--controlBorderBase);
+                }
+            }
+        }
+
+        span {
+            @include fontSize(p4);
+        }
+    }
+
+    &__icon {
+        width: toRem(16);
+        height: toRem(16);
+        margin-right: toRem(4);
+    }
+
+    &__icon,
+    &__count,
+    &__subtitle {
+        display: inline-block;
+        vertical-align: middle;
+        color: var(--textSecondary);
+    }
+
+    &__stars {
+        display: inline-block;
+        color: var(--textBrand);
+        vertical-align: middle;
+    }
+
+    @media (max-width: $maxMobile) {
+        &__settings {
+            @include marginLevel(bottom, purple);
+
+            width: 100%;
+        }
+
+        &__count {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__company {
+            padding-right: toRem(44);
+        }
+
+        &__addition,
+        &__stars {
+            padding-left: toRem(44 + 8);
+        }
+
+        &__item {
+            display: inline-block;
+
+            & + & {
+                margin-left: toRem(12);
+            }
+        }
+
+        &__icon,
+        &__count {
+            margin-right: toRem(4);
+        }
+
+        &__icon,
+        &__count,
+        &__subtitle {
+            vertical-align: middle;
+        }
+
+        &__settings {
+            position: absolute;
+            top: toRem(16);
+            right: toRem(16);
+            z-index: 2;
+        }
+
+        &__rating {
+            margin-right: toRem(8);
+        }
+    }
+}

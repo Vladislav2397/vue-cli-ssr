@@ -1,0 +1,31 @@
+.counter-action {
+    &__count,
+    &__button {
+        vertical-align: middle;
+    }
+
+    &__count {
+        @include fontSize(p3);
+
+        width: toRem(32);
+        text-align: center;
+        display: inline-block;
+        font-weight: 500;
+        margin-left: toRem(4);
+        margin-right: toRem(4);
+
+        &--type {
+            &-base {
+                color: var(--textSecondary);
+            }
+
+            &-positive {
+                color: var(--textSuccess);
+            }
+
+            &-negative {
+                color: var(--textCritical);
+            }
+        }
+    }
+}

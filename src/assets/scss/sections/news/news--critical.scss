@@ -1,0 +1,36 @@
+.news {
+    @include paddingLevel(bottom, yellow);
+
+    &__title {
+        @include marginLevel(bottom, purple);
+        @include fontSize(p3);
+
+        color: var(--textSecondary);
+    }
+
+    &__tags {
+        @include marginLevel(bottom, pink);
+
+        margin-left: toRem(-16);
+        margin-right: toRem(-16);
+    }
+
+    &__card {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+
+    &__image {
+        @include marginLevel(bottom, orange);
+
+        width: toRem(160);
+        height: toRem(210);
+    }
+
+    &__skeleton {
+        & + & {
+            @include marginLevel(top, purple);
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.link {
+    text-align: left;
+    display: inline-block;
+    position: relative;
+
+    &--view {
+        &-brand {
+            color: var(--textBrand);
+        }
+
+        &-secondary {
+            color: var(--textSecondary);
+        }
+    }
+
+    &--size {
+        &-s {
+            @include fontSize(p4);
+
+            &::after,
+            &::before {
+                font-size: toRem(14);
+            }
+        }
+
+        &-m {
+            @include fontSize(p3);
+
+            &::after,
+            &::before {
+                font-size: toRem(16);
+            }
+        }
+    }
+
+    // TODO: Было другое объявление, узнать для чего
+    &--icon {
+        .icon {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-left {
+            padding-left: toRem(20);
+
+            .icon {
+                left: 0;
+            }
+        }
+
+        &-right {
+            padding-right: toRem(20);
+
+            .icon {
+                right: 0;
+            }
+        }
+    }
+}

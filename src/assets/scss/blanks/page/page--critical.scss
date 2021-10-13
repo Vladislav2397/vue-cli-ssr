@@ -1,0 +1,112 @@
+.page {
+    position: relative;
+    padding-top: toRem(48);
+    min-height: 100vh;
+    box-sizing: border-box;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: transparent;
+        z-index: -1;
+    }
+
+    &--overlay::before {
+        background-color: var(--backgroundOverlay);
+        z-index: $z-index-overlay;
+    }
+
+    &__container {
+        margin: 0 auto;
+    }
+
+    &__spacer {
+        box-sizing: border-box;
+        max-width: toRem(480);
+        margin: 0 auto;
+    }
+
+    &__notification {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 4;
+    }
+
+    @media (max-width: $maxMobileLate) {
+        &__container {
+            padding: 0 toRem(16);
+            max-width: toRem(480);
+
+            &--size {
+                &-l {
+                    padding: 0 toRem(8);
+                    max-width: toRem(501);
+                }
+
+                &-m {
+                    padding: 0 toRem(16);
+                    max-width: toRem(480);
+                }
+            }
+        }
+    }
+
+    @media (max-width: $maxTablet) {
+        &__append {
+            @include marginLevel(bottom, purple);
+        }
+    }
+
+    @media (min-width: $tablet) {
+        padding-top: toRem(72);
+    }
+
+    @media (min-width: $tabletLate) {
+        &__header {
+            @include marginLevel(bottom, yellow);
+        }
+
+        &__body {
+            position: relative;
+        }
+
+        &__spacer {
+            max-width: toRem(493);
+        }
+
+        &__content {
+            margin-left: span(3 of 10);
+            width: span(7 of 10);
+        }
+    }
+
+    @media (min-width: $desktop) {
+        &__body {
+            position: relative;
+        }
+
+        &__spacer {
+            max-width: toRem(480);
+        }
+
+        &__content {
+            width: toRem(480);
+            margin: 0 auto;
+        }
+
+        &__append {
+            position: fixed;
+            top: toRem(72);
+            right: 0;
+            width: toRem(240);
+            padding-right: toRem(16);
+            box-sizing: content-box;
+        }
+    }
+}

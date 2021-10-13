@@ -1,0 +1,43 @@
+.card-information {
+    box-sizing: border-box;
+    padding: toRem(16);
+    overflow: hidden;
+
+    &--wide {
+        border-radius: 0;
+    }
+
+    &__head {
+        @include marginLevel(bottom, blue);
+    }
+
+    &__avatar {
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: toRem(8);
+    }
+
+    &__title {
+        @include fontSize(p3);
+
+        font-weight: 500;
+        vertical-align: middle;
+        color: var(--textBase);
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__description {
+        @include fontSize(p4);
+
+        color: var(--textSecondary);
+    }
+
+    &__button {
+        @include marginLevel(top, purple);
+
+        width: 100%;
+    }
+}

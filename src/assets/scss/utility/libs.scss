@@ -1,0 +1,121 @@
+//@import '~vue2-datepicker/scss/index.scss';
+
+.mx-datepicker {
+    overflow: hidden;
+
+    &-main {
+        border: none;
+    }
+
+    .mx-calendar .mx-calendar-header *,
+    .mx-time .mx-time-header *,
+    .mx-calendar .mx-calendar-content *,
+    .mx-time .mx-time-content * {
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .mx-calendar .mx-calendar-header *,
+    .mx-time .mx-time-header * {
+        @include fontSize(p2);
+    }
+
+    .mx-calendar .mx-calendar-content *,
+    .mx-time .mx-time-content * {
+        @include fontSize(p3);
+
+        line-height: toRem(40);
+    }
+}
+
+.mx-time {
+    &-header {
+        border-bottom: none;
+
+        button {
+            @include fontSize(p2);
+
+            color: var(--textBase);
+            font-weight: 400;
+        }
+    }
+
+    &-item {
+        color: var(--textBase);
+    }
+}
+
+.mx-scrollbar {
+    &.mx-time-column {
+        border: none;
+    }
+}
+
+.mx-calendar {
+    &.mx-calendar-panel-date {
+        width: toRem(280);
+        padding-left: 0;
+        padding-right: 0;
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    * {
+        @include fontSize(p3);
+    }
+
+    &-header {
+        &-label {
+            * {
+                @include fontSize(p2);
+
+                font-weight: 400;
+            }
+
+            button {
+                color: var(--textBase);
+            }
+        }
+    }
+}
+
+table.mx-table {
+    thead tr th {
+        height: toRem(40);
+    }
+}
+
+.mx-calendar-content,
+.mx-time-content {
+    height: auto;
+}
+
+.mx-time-column {
+    .mx-time-item {
+        height: toRem(40);
+        line-height: toRem(40);
+
+        &:hover {
+            background-color: #fff;
+            color: var(--textBrand);
+        }
+
+        &.active {
+            background-color: var(--controlBackgroundBrand);
+            color: var(--textOnBrand);
+            border-radius: $borderRadiusUI;
+        }
+    }
+}
+
+.mx-date-row {
+    td.cell {
+        height: toRem(40);
+    }
+
+    .cell.active,
+    td.cell.today {
+        border-radius: $borderRadiusUI;
+        background-color: var(--controlBackgroundBrand);
+        color: var(--textOnBrand);
+    }
+}

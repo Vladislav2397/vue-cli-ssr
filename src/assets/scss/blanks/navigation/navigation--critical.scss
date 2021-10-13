@@ -1,0 +1,15 @@
+.navigation {
+    &__item {
+        & + & {
+            margin-top: toRem(4);
+        }
+    }
+
+    &__link {
+        width: 100%;
+
+        i.icon {
+            color: var(--textBrand);
+        }
+    }
+}

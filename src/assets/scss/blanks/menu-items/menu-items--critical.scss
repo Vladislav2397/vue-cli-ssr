@@ -1,0 +1,31 @@
+.menu-items {
+    @include fontSize(p3);
+
+    display: table;
+    color: var(--textBase);
+    width: 100%;
+
+    &__left,
+    &__right {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__right {
+        text-align: right;
+        padding-left: toRem(8);
+    }
+
+    &__title {
+        &--bold {
+            @include fontSize(p3, medium);
+        }
+    }
+
+    &__description {
+        @include fontSize(p4);
+        @include marginLevel(top, red);
+
+        color: var(--textSecondary);
+    }
+}

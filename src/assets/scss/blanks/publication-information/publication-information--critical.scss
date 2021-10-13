@@ -1,0 +1,42 @@
+.publication-information {
+    @include fontSize(p3);
+
+    color: var(--textSecondary);
+    position: relative;
+
+    &__divider {
+        @include marginLevel(bottom, purple);
+    }
+
+    &__action {
+        p {
+            display: inline-block;
+            float: right;
+            color: var(--textBase);
+        }
+
+        @media (max-width: $maxMobile) {
+            &--sent {
+                @include marginLevel(bottom, purple);
+            }
+        }
+    }
+
+    @media (min-width: $tablet) {
+        &__action {
+            display: inline-block;
+
+            span {
+                margin-right: toRem(6);
+            }
+
+            &--sent {
+                margin-right: toRem(24);
+            }
+        }
+
+        &__link {
+            float: right;
+        }
+    }
+}

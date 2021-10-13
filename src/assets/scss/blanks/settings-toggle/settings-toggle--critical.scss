@@ -1,0 +1,45 @@
+.settings-toggle {
+    $b: &;
+
+    @include paddingLevel(top, purple);
+
+    &:not(&--align-top) {
+        @include paddingLevel(bottom, purple);
+
+        border-bottom: 1px solid var(--controlBorderBase);
+    }
+
+    &__content {
+        width: calc(100% - #{toRem(40 + 8)});
+
+        p,
+        span {
+            @include fontSize(p3);
+        }
+
+        p {
+            @include marginLevel(top, red);
+
+            color: var(--textSecondary);
+        }
+    }
+
+    &--align-top {
+        border-bottom: none;
+
+        #{$b}__content,
+        .toggle {
+            vertical-align: top;
+        }
+    }
+
+    &__content,
+    .toggle {
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    .toggle {
+        margin-left: toRem(8);
+    }
+}
